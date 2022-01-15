@@ -1,12 +1,19 @@
 require('dotenv').config();
+// require("./config/database");
 //Express
 const express = require('express');
 const methodOverride = require("method-override");
+// const morgan = require('morgan');
+// const session  = require("express-session")
+// const passport = require("passport")
+
+// connect to the MongoDB with mongoose
+const db = require('./models')
+//
 
 // Importing Express Layouts so we don't have to reuse html code for each page
 const expressLayouts = require('express-ejs-layouts');
 const indexRouter = require('./routes/users');
-const db = require('./models')
 /* ==== Instanced Modules  ==== */
 const app = express();
 
