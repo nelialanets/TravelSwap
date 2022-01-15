@@ -6,12 +6,12 @@ const listingSchema = new mongoose.Schema(
       date: { type: Date, required: true },
       location: { type: String, required: true },
       description: { type: String, required: true },
-      img: {type: String, required: true},
-      user: {type:mongoose.Schema.Types.ObjectId, ref:"User"},
+      img: { type: String, required: true},
+      user: { type:mongoose.Schema.Types.ObjectId, ref:'User'},
 },
       {
       timestamps: true,
       } 
 );
 
-module.exports = mongoose,model('Listing', listingSchema)
+module.exports = mongoose.model('Listing', listingSchema)
