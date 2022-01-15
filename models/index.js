@@ -1,6 +1,16 @@
-// Connecting to MongoDB
-const mongoose = require('mongoose');
-mongoose.connect(process.env.DATABASE_URL);
+
+const mongoose = require("mongoose");
 const db = mongoose.connection;
-db.on('error', error => console.error(error));
-db.once('open', () => console.log('Connected to MongoDB.'));
+const dbUrl = process.env.DATABASE_URL;
+
+mongoose.connect(dbUrl)
+.then(()=>console.log(
+     `MongoDB successfully connected at ${db.host}: ${db.port}!how great`)
+)
+.catch((err)=> console.log(`MondoDB connectoion fails${err}`)
+);
+module.exports={
+
+}
+
+
