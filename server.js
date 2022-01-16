@@ -5,7 +5,11 @@ const methodOverride = require("method-override");
 
 // Importing Express Layouts so we don't have to reuse html code for each page
 const expressLayouts = require('express-ejs-layouts');
-const indexRouter = require('./routes/users');
+
+
+const indexRouter = require('./routes/index');
+const listingRouter = require ('./routes/listings');
+
 const db = require('./models')
 /* ==== Instanced Modules  ==== */
 const app = express();
@@ -29,10 +33,9 @@ app.use((req, res, next) => {
 /* ====  Routes & Controllers  ==== */
 //Home Route
 app.use('/', indexRouter);
+app.use('/listings', listingRouter);
 
-//Internal Routs
-//app.use
-//app.use
+
 app.listen(PORT, () => {
 	console.log(`Dope blog app is live at http://localhost:${PORT}`);
 });
