@@ -17,7 +17,7 @@ const newListing = (req, res)=>{
 
 const show = (req, res)=>{
           db.Listing.findById(req.params.id)
-          .populate("user")// basically db.Author.findById(), lets you reference documents in other collections by automatically replacing the specified paths in the document with document(s) from other collections
+          .populate("user")// basically db.Listing.findById(), lets you reference documents in other collections by automatically replacing the specified paths in the document with document(s) from other collections
           //exec executes the query
           .exec((err, foundListing)=>{
                if(err) return res.send(err);
