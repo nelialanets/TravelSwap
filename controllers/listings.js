@@ -10,14 +10,13 @@ const index=(req, res)=>{
      });
 };
 
-
 const newListing = (req, res)=>{
          res.render('listings/new', {title: "Add Swap"});
 }
 
 const show = (req, res)=>{
           db.Listing.findById(req.params.id)
-          .populate("user")// basically db.Author.findById(), lets you reference documents in other collections by automatically replacing the specified paths in the document with document(s) from other collections
+          .populate("user")// basicallyUser.findById(), lets you reference documents in other collections by automatically replacing the specified paths in the document with document(s) from other collections
           //exec executes the query
           .exec((err, foundListing)=>{
                if(err) return res.send(err);
@@ -28,17 +27,18 @@ const show = (req, res)=>{
      }
 
 
-// const edit = (req, res) => {
-//      db.Listing.findById(req.params.id, (err, foundListing)=>{
-//           if (err) res.send(err);
-//           const context = {listing: foundListing};
-//           return res.render(.)
-
-//})
-
+ const edit = (req, res) => {
+     db.Listing.findById(req.params.id, (err, foundListing)=>{
+         if (err) res.send(err);
+          const context = {listing: foundListing};
+          return res.render('listing/edit', context)
+})
+ }
+ 
 module.exports={
      index,
      show,
      newListing,
+     edit,
      //  create,
 }
