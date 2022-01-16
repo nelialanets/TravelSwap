@@ -9,11 +9,3 @@ mongoose.connect(dbUrl)
 )
 .catch((err)=> console.log(`MondoDB connectoion fails${err}`)
 );
-
-
-module.exports={
-     User: require('./User'),
-     Listing: require('./Listing'),
-}
-
-
