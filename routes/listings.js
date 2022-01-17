@@ -8,6 +8,4 @@ router.get('/:id', listilngsCTRL.show);
 router.get('/:id/edit', listilngsCTRL.edit);
 router.delete('/:id',listilngsCTRL.remove)
 
-
-
 module.exports = router;

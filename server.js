@@ -9,6 +9,7 @@ const expressLayouts = require('express-ejs-layouts');
 
 const db = require('./config/database')
 
+// * Declaring route variables
 const indexRouter = require('./routes/index');
 const listingRouter = require ('./routes/listings');
 
@@ -36,7 +37,6 @@ app.use((req, res, next) => {
 //Home Route
 app.use('/', indexRouter);
 app.use('/listings', listingRouter);
-
 
 app.listen(PORT, () => {
 	console.log(`Dope blog app is live at http://localhost:${PORT}`);

@@ -9,7 +9,6 @@ const index=(req, res)=>{
 });
 }
 
-
 const show = (req, res)=>{
      User.findById(rew.params.id)
      .populate('listings')
@@ -18,11 +17,10 @@ const show = (req, res)=>{
      const context = {user: foundUser},
      return res.render('users/index')
      })
-
 }
 
 const newUser = (req, res)=>{
-     
+
      res.render('users/new', {title: "Create an Account"});
 }
 

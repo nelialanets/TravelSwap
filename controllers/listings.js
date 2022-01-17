@@ -1,4 +1,3 @@
-
 const Listing = require('../models/Listing');
 const User = require('../models/User')
 
@@ -11,37 +10,36 @@ const index=(req, res)=>{
 };
 
 const newListing = (req, res)=>{
-     
          res.render('listings/newlist', {title: "Add Swap"});
 }
 
 
-const show = (req, res)=>{
-          Listing.findById(req.params.id)
-          .populate("user")// basicallyUser.findById(), lets you reference documents in other collections by automatically replacing the specified paths in the document with document(s) from other collections
-          //exec executes the query
-          .exec((err, foundListing)=>{
-               if(err) return res.send(err);
-               console.log(foundListing)
-               const context = {listign: foundListing};
-               res.render("listings/showAll", context)
-          })
-     }
-     const create = (req, res) => {
-          Listing.create(req.body, (err, createdArticle) => {
-              if(err) return res.send(err);
-              // allow us to add an alistign to the author
-                //.exec short for execute. 
-              User.findById(createdListing.user)
-                  .exec(function(err, foundUser) {
-                      if(err) return res.send(err);
-                      foundUser.listings.push(createdListing) 
-                      foundUser.save(); 
-                      res.redirect("/listings")
-                  })
-          })
-      }
-      
+const show = (req, res)=> {
+    Listing.findById(req.params.id)
+    .populate("user")// basicallyUser.findById(), lets you reference documents in other collections by automatically replacing the specified paths in the document with document(s) from other collections
+    //exec executes the query
+    .exec((err, foundListing)=>{
+        if(err) return res.send(err);
+        console.log(foundListing)
+        const context = {listign: foundListing};
+        res.render("listings/showAll", context)
+    })
+}
+const create = (req, res) => {
+    Listing.create(req.body, (err, createdArticle) => {
+        if(err) return res.send(err);
+        // allow us to add an alistign to the author
+        //.exec short for execute. 
+        User.findById(createdListing.user)
+            .exec(function(err, foundUser) {
+                if(err) return res.send(err);
+                foundUser.listings.push(createdListing) 
+                foundUser.save(); 
+                res.redirect("/listings")
+            })
+    })
+}
+
 
  const edit = (req, res) => {
      Listing.findById(req.params.id, (err, foundListing)=>{
@@ -61,7 +59,22 @@ const show = (req, res)=>{
          })
      })
  }
- 
+
+ const update = (req, res) => {
+	Listing.findByIdAndUpdate(
+		req.params.id,
+		{
+			$set: {
+				...req.body,
+			},
+		},
+		{ new: true },
+		(err, updatedAuthor) => {
+			if (err) return res.send(err);
+			return res.redirect('/listings');
+		}
+	);
+};
  
 module.exports={
      index,
@@ -70,5 +83,5 @@ module.exports={
      edit,
      create,
      remove,
-     
+     update,
 }
