@@ -5,6 +5,7 @@ const listilngsCTRL = require('../controllers/listings')
 router.get('/', listilngsCTRL.index);
 router.get('/newlist',listilngsCTRL.newListing);
 router.get('/:id', listilngsCTRL.show);
+router.post('/', listilngsCTRL.create)
 router.get('/:id/edit', listilngsCTRL.edit);
 router.delete('/:id',listilngsCTRL.remove)
 

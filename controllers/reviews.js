@@ -11,7 +11,7 @@ const create =(req,res)=>{
           .exec(function (err,foundListing){
                if(err) res.send(err);
                foundListing.Listings.push(createdReview)
-               foundListing.safe();
+               foundListing.save();
                return res.redirect(`/listings/${Listing._id}`)
           })
 
