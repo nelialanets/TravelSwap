@@ -1,6 +1,6 @@
 
 const Listing = require('../models/Listing');
-const User = require('../models/User')
+const Review = require('../models/Review')
 
 const index=(req, res)=>{
      Listing.find({}, function(err, listings){
@@ -18,7 +18,7 @@ const newListing = (req, res)=>{
 
 const show = (req, res)=>{
           Listing.findById(req.params.id)
-          .populate("rewievs")// basicallyUser.findById(), lets you reference documents in other collections by automatically replacing the specified paths in the document with document(s) from other collections
+          .populate("reviews")// basicallyUser.findById(), lets you reference documents in other collections by automatically replacing the specified paths in the document with document(s) from other collections
           //exec executes the query
           .exec((err, foundListing)=>{
                if(err) return res.send(err);
@@ -27,21 +27,14 @@ const show = (req, res)=>{
                res.render("listings/showAll", context)
           })
      }
-     const create = (req, res) => {
-          Listing.create(req.body, (err, createdArticle) => {
-              if(err) return res.send(err);
-              // allow us to add an alistign to the author
-                //.exec short for execute. 
-              User.findById(createdListing.user)
-                  .exec(function(err, foundUser) {
-                      if(err) return res.send(err);
-                      foundUser.listings.push(createdListing) 
-                      foundUser.save(); 
-                      res.redirect("/listings")
-                  })
-          })
-      }
-      
+
+     const create = (req, res)=> {
+        Listing.create(req.body, function(err, createdListing){
+            if (err) res.send(err);
+            return res.redirect('/listings')
+        })
+    }
+
 
  const edit = (req, res) => {
      Listing.findById(req.params.id, (err, foundListing)=>{
@@ -51,17 +44,20 @@ const show = (req, res)=>{
 })
  }
 
- const remove = (req, res) => {
-     Listing.findByIdAndDelete(req.params.id, (err, deletedListing) => {
+ const remove = (req, res)=>{
+     addEventListener.Listing.findByIdandDelete(req.params.id, (err, deleteListing)=>{
          if(err) return res.send(err);
-         User.findById(deletedListing.user, (err, foundUser) => {
-             foundUser.listings.remove(deletedListing);
-             foundAuthor.save();
-             res.redirect("/listings")
-         })
-     })
+         Review.deleteMany(
+            {listing: deleteListing._id},
+             (err, deleteListing)=>{
+                 console.log(deleteListing);
+                 if(err) return res.send(err)
+            return res.redirect('/listings')
+            }
+
+        )
+    })
  }
- 
  
 module.exports={
      index,
