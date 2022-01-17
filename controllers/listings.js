@@ -69,7 +69,7 @@ const create = (req, res) => {
 			},
 		},
 		{ new: true },
-		(err, updatedAuthor) => {
+		(err, updatedListing) => {
 			if (err) return res.send(err);
 			return res.redirect('/listings');
 		}
