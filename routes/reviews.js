@@ -1,6 +1,9 @@
-// const express = require('express');
-// const router = express.Router();
-// const UserCTRL = require('../controllers/users')
+const express = require('express');
+const router = express.Router();
+const reviewsCtrl = require('../controllers/reviews');
 
-// router.get('/', UserCTRL.newUser)
+router.post('/listings:id/reviews', reviewsCtrl.create);
+router.delete('/:id', reviewsCtrl.destroy);
+
+module.exports =router;
 

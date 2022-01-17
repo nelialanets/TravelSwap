@@ -11,6 +11,7 @@ const db = require('./config/database')
 
 const indexRouter = require('./routes/index');
 const listingRouter = require ('./routes/listings');
+const reviewRouter = require('./routes/reviews')
 
 /* ==== Instanced Modules  ==== */
 const app = express();
@@ -36,6 +37,7 @@ app.use((req, res, next) => {
 //Home Route
 app.use('/', indexRouter);
 app.use('/listings', listingRouter);
+app.use('/', reviewRouter);
 
 
 app.listen(PORT, () => {

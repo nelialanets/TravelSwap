@@ -6,9 +6,9 @@ const listingSchema = new mongoose.Schema({
              required: true 
             },
       datePosted: {
-                  type: Number, 
-                  default: function (){
-                  return new Date().getFullYear();
+             type: Number, 
+            default: function (){
+            return new Date().getFullYear();
                   }
             },
       location: {
@@ -23,9 +23,9 @@ const listingSchema = new mongoose.Schema({
             type: String,
              required: true
             },
-      user: {
-             type:mongoose.Schema.Types.ObjectId, ref:'User'
-            }
+      reviews:[{
+             type:mongoose.Schema.Types.ObjectId, ref:'Review'
+            }]
 },
       {
       timestamps: true,

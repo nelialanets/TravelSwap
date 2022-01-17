@@ -1,37 +1,35 @@
+
 const Listing = require('../models/Listing');
-const User = require('../models/User');
-
-const index=(req, res)=>{
-     User.find({}, function(err, allUsers){
-     if(err) return res.send(err);
-     const context = {users: allUsers}
-     res.render('users/index', context);
-});
-}
+const Review = require('../models/Review');
 
 
-const show = (req, res)=>{
-     User.findById(rew.params.id)
-     .populate('listings')
-     .exec((err, foundUser)=>{
-     if (err) return res.send(err);  
-     const context = {user: foundUser},
-     return res.render('users/index')
+
+const create =(req,res)=>{
+     Review.create(req.body, function(err, createdReview){
+          if (err) return res.send(err);
+          Listing.findById(createdReview.Listing)
+          .exec(function (err,foundListing){
+               if(err) res.send(err);
+               foundListing.Listings.push(createdReview)
+               foundListing.safe();
+               return res.redirect(`/listings/${Listing._id}`)
+          })
+
      })
-
 }
+const destroy =(req,res)=>{
+     Listing.findById(req.params.id, function (err, movie) {
+       if (err) return res.send(err);
+       Listing.reviews.remove();
+       Listing.save(function (err) {
+        res.redirect(`/listings/${Listing._id}`);
+      });
+    });
+  }
 
-const newUser = (req, res)=>{
-     
-     res.render('users/new', {title: "Create an Account"});
-}
 
-//CREATE
-//UPDATE
-//DELLITE
 
 module.exports={
-     newUser,
-     index,
-     show,
+    create,
+    destroy,
 }
