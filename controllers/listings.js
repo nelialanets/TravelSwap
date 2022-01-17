@@ -28,7 +28,6 @@ const show = (req, res)=> {
 const create = (req, res) => {
     Listing.create(req.body, (err, createdArticle) => {
         if(err) return res.send(err);
-        // allow us to add an alistign to the author
         //.exec short for execute. 
         User.findById(createdListing.user)
             .exec(function(err, foundUser) {
@@ -54,7 +53,7 @@ const create = (req, res) => {
          if(err) return res.send(err);
          User.findById(deletedListing.user, (err, foundUser) => {
              foundUser.listings.remove(deletedListing);
-             foundAuthor.save();
+             foundListing.save();
              res.redirect("/listings")
          })
      })
