@@ -3,8 +3,7 @@ const mongoose= require("mongoose");
 const userSchema = new mongoose.Schema(
      {
      name: { type: String, required: true},
-     googleId: { type: String},
-     bio: {type:String},
+     text:{String, require:true},
      listings: [{ type:mongoose.Schema.Types.ObjectId, ref:'Listing'}]
 },
 {
@@ -13,4 +12,4 @@ const userSchema = new mongoose.Schema(
 
 );
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Review', userSchema);

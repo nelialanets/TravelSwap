@@ -18,7 +18,7 @@ const newListing = (req, res)=>{
 
 const show = (req, res)=>{
           Listing.findById(req.params.id)
-          .populate("user")// basicallyUser.findById(), lets you reference documents in other collections by automatically replacing the specified paths in the document with document(s) from other collections
+          .populate("rewievs")// basicallyUser.findById(), lets you reference documents in other collections by automatically replacing the specified paths in the document with document(s) from other collections
           //exec executes the query
           .exec((err, foundListing)=>{
                if(err) return res.send(err);
