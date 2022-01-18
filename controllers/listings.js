@@ -1,4 +1,3 @@
-
 const Listing = require('../models/Listing');
 const User = require('../models/User')
 
@@ -9,12 +8,6 @@ const index=(req, res)=>{
           res.render('listings/showAll', {title: 'View All Swaps', listings});
      });
 };
-
-const newListing = (req, res)=>{
-     
-         res.render('listings/newlist', {title: "Add Swap"});
-}
-
 
 const show = (req, res)=>{
           Listing.findById(req.params.id)
@@ -62,6 +55,15 @@ const show = (req, res)=>{
      })
  }
  
+// * New Listing Route
+const newListing = (req, res)=>{
+    res.render('listings/newlist');
+}
+// * Post Listing
+const postListing = (req, res) => {
+    res.send('listings/newlist');
+}
+
  
 module.exports={
      index,
@@ -70,5 +72,5 @@ module.exports={
      edit,
      create,
      remove,
-     
+     postListing,
 }
