@@ -57,7 +57,7 @@ const show = (req, res)=>{
  
 // * New Listing Route
 const newListing = (req, res)=>{
-    res.render('listings/newlist');
+    res.render('listings/newlist', {listing: new Listing()});
 }
 // * Post Listing
 const postListing = (req, res) => {
