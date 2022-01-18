@@ -22,6 +22,14 @@ const listingSchema = new mongoose.Schema({
             type: String,
             required: true 
       },
+      startDate: {
+            type: String,
+            required: true,
+      },
+      endDate: {
+            type: String,
+            required: true,
+      }
       // * I commented out user and img because we don't really know
       // * how to do those yet. 
       // img: {

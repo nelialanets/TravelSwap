@@ -74,6 +74,8 @@ const postListing = async (req, res) => {
         location: req.body.location,
         datePosted: fullDate,
         description: req.body.description,
+        startDate: req.body.startDate,
+        endDate: req.body.endDate,
     })
 
     try {
@@ -85,7 +87,7 @@ const postListing = async (req, res) => {
     } catch {
         res.render('listings/newlist', {
             listing: listing,
-            errorMessage: 'Error creating listing',
+            errorMessage: 'You must fill in all fields.',
         })
     }
 
