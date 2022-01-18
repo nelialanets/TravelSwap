@@ -27,7 +27,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.set('layout', 'layouts/layout');
 app.use(expressLayouts);
+
+// * This lets us use CSS with ejs-layouts
 app.use('/public', express.static(path.join(__dirname, 'public')));
+
 app.use((req, res, next) => {
 	console.log(req.url, req.method);
 	next();

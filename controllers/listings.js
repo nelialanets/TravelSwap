@@ -60,8 +60,35 @@ const newListing = (req, res)=>{
     res.render('listings/newlist', {listing: new Listing()});
 }
 // * Post Listing
-const postListing = (req, res) => {
-    res.send('listings/newlist');
+const postListing = async (req, res) => {
+
+    // * Get the current date before we send the listing to mongodb
+    let date = new Date()
+    let day = date.getDate();
+    let month = date.getMonth()+1;
+    let year = date.getFullYear();
+    let fullDate = `${month}/${day}/${year}`;
+
+    const listing = new Listing({
+        name: req.body.name,
+        location: req.body.location,
+        datePosted: fullDate,
+        description: req.body.description,
+    })
+
+    try {
+        const newListing = await listing.save()
+
+        // res.redirect(`listings/${newListing.id}`)
+        // * This is confusing, I don't think we need to worry about this yet.
+        res.redirect('listings/newlisting')
+    } catch {
+        res.render('listings/newlist', {
+            listing: listing,
+            errorMessage: 'Error creating listing',
+        })
+    }
+
 }
 
  
