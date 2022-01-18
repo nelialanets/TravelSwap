@@ -1,12 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=, initial-scale=1.0">
-     <title>Document</title>
+<html>
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel = "stylesheet" href="../public/css/styles.css">
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.12.0.min.js"
+    ></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+
+$(document).ready(function(){
+        $('.slider').slider({ 
+          height:600,
+          transition:500,
+          interval:6000,
+          indicator:false,
+          fullWidth: true
+        });
+      });
+         
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
+</script>
+
 </head>
 <body>
-     Home page
+     <!-- Nav Bar set Up -->
+     <div class="navbar-fixed">
+          <nav class="pink lighten-1 z-depth-5">
+            <div class="container">
+            <div class="nav-wrapper">
+              <a href="/index" class="brand-logo">TravelSwap</a>
+              <a href="/index" data-target="mobile-nav"class="sidenav-trigger">
+                <i class="material-icons"></i>
+              </a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="/listings">View Swaps</a> </li>
+                <li><a href="/listings/newlist">Add Swap</a></li>
+                <li><a href="reviewsF/new.ejs">Reviews</a></li>
+                <li><a href="#">Help</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <ul class="sidenav" id="mobile-nav">
+        <li><a href="/listings"></a>View Swaps</li>
+        <li><a href="/listings/newlist"></a>Add Swap</li>
+        <li><a href="reviewsF/new.ejs"></a>Reviews</li>
+        <li><a href="#"></a>Help</li>
+      </ul>
+<!-- Slider -->
+<div class="slider" style= "border: 1px, solid, black" >
+     <ul class="slides">
+       <li>
+         <img src="/images/img1.jpg"> <!-- random image -->
+         <div class="caption center-align">
+           <h3>Experience Life and Travel Differently</h3>
+           <h5 class="light grey-text text-lighten-3">TravelSwap stop thinking bout finding a housing and paing a big $. Swap your place with somene around the world</h5>
+         </div>
+       </li>
+       <li>
+         <img src="images/img2.jpg"> <!-- random image -->
+         <div class="caption left-align">
+           <h3>Choose a place at any part of the world</h3>
+           <h5 class="light grey-text text-lighten-3">List your place and match with a travels swaper</h5>
+         </div>
+       </li>
+       <li>
+         <img src="/images/img1.jpg"> <!-- random image -->
+         <div class="caption right-align">
+           <h3>Make your Travel Posible</h3>
+           <h5 class="light grey-text text-lighten-3"></h5>
+         </div>
+       </li>
+       <li>
+         <img src="images/viceroy-main-pool.jpeg"> <!-- random image -->
+         <div class="caption center-align">
+           <h3></h3>
+           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+         </div>
+       </li>
+     </ul>
+   </div>
 </body>
 </html>
