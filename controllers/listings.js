@@ -72,8 +72,7 @@ const postListing = async (req, res) => {
         const newListing = await listing.save()
 
         // res.redirect(`listings/${newListing.id}`)
-        // * This is confusing, I don't think we need to worry about this yet.
-        res.redirect('listings/newlisting')
+        res.redirect('listings')
     } catch {
         res.render('listings/newlist', {
             listing: listing,

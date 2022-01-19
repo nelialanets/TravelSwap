@@ -42,6 +42,9 @@ html {
 .field-label {
     grid-column: 1;
     text-align: center;
+    color: black !important;
+    position: relative;
+    top: 20px;
 }
 
 .input-field {
@@ -70,7 +73,7 @@ html {
     font-family: 'Ubuntu', sans-serif;
     border-style: solid;
     border-color: black;
-    background-color: #fe019a;
+    background-color: #fe019a !important;
     padding: 7px 20px;
     border-width: 0.1em;
     border-radius: 0.5em;
@@ -81,6 +84,7 @@ html {
 .error {
     margin-bottom: 1%;
     color: red;
+    font-size: 1.5rem;
 }
 
 .section-search input {
