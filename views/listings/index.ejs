@@ -22,7 +22,7 @@
 <div class='show-all-flex'>
   <form action="/listings" method='GET'>
     <div class='search'>
-      <input type="text" name='location' value='<% searchOptions.location %>'>
+      <input type="text" name='location' placeholder='search locations...' value='<% searchOptions.location %>'>
       <button type='submit'>Search</button>
     </div>
   </form>
@@ -30,7 +30,10 @@
 
     <div class='listingItem'>
       <span class='title'><%= listing.name %></span>
-
+      <span class='datePosted'><%= listing.datePosted %></span>
+      <span class='listLocation'><%= listing.location %></span>
+      <span class='listDescription'><%= listing.description %></span>
+      <span class='timeSpan'><%= `${listing.startDate} - ${listing.endDate}` %></span>
     </div>
 <% }) %>
 </div>
