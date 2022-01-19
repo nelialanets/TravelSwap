@@ -1,4 +1,3 @@
-
 const Listing = require('../models/Listing');
 const Review = require('../models/Review')
 
@@ -9,12 +8,6 @@ const index=(req, res)=>{
           res.render('listings/showAll', {title: 'View All Swaps', listings});
      });
 };
-
-const newListing = (req, res)=>{
-     
-         res.render('listings/newlist', {title: "Add Swap"});
-}
-
 
 const show = (req, res)=>{
           Listing.findById(req.params.id)
@@ -59,6 +52,46 @@ const show = (req, res)=>{
     })
  }
  
+
+// * New Listing Route
+const newListing = (req, res)=>{
+    res.render('listings/newlist', {listing: new Listing()});
+}
+// * Post Listing
+const postListing = async (req, res) => {
+
+    // * Get the current date before we send the listing to mongodb
+    let date = new Date()
+    let day = date.getDate();
+    let month = date.getMonth()+1;
+    let year = date.getFullYear();
+    let fullDate = `${month}/${day}/${year}`;
+
+    const listing = new Listing({
+        name: req.body.name,
+        location: req.body.location,
+        datePosted: fullDate,
+        description: req.body.description,
+        startDate: req.body.startDate,
+        endDate: req.body.endDate,
+    })
+
+    try {
+        const newListing = await listing.save()
+
+        // res.redirect(`listings/${newListing.id}`)
+        // * This is confusing, I don't think we need to worry about this yet.
+        res.redirect('listings/newlisting')
+    } catch {
+        res.render('listings/newlist', {
+            listing: listing,
+            errorMessage: 'You must fill in all fields.',
+        })
+    }
+
+}
+
+ 
 module.exports={
      index,
      show,
@@ -66,5 +99,5 @@ module.exports={
      edit,
      create,
      remove,
-     
+     postListing,
 }

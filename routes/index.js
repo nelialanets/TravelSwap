@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 router.get('/', function(req, res, next) {
-    res.redirect('/listings');
+    res.render('index');
   });
 
 module.exports = router;

@@ -3,6 +3,7 @@ require('dotenv').config();
 const morgan = require('morgan');
 const express = require('express');
 const methodOverride = require("method-override");
+const path = require('path');
 
 // Importing Express Layouts so we don't have to reuse html code for each page
 const expressLayouts = require('express-ejs-layouts');
@@ -28,7 +29,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.set('layout', 'layouts/layout');
 app.use(expressLayouts);
-app.use(express.static('public'));
+
+// * This lets us use CSS with ejs-layouts
+app.use('/public', express.static(path.join(__dirname, 'public')));
+
 app.use((req, res, next) => {
 	console.log(req.url, req.method);
 	next();
