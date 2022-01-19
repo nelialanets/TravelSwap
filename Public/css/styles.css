@@ -46,7 +46,9 @@ html {
 
 .input-field {
     grid-column: 2;
-    font-size: 2rem;
+    height: 40px;
+    width: 300px;
+    font-size: 1.5rem;
     border-style: solid;
     border-color: black;
     border-width: 0.1em;
@@ -54,9 +56,15 @@ html {
     background-color: #faf0e6;
 }
 
-textarea {
+#desc {
     font-family: 'Ubuntu', sans-serif;
+    resize: none;
+    font-size: 1.5rem;
+    height: 220px;
+    /*  * double size of other width because of pixel height hardcoding * */
+    border-width: 0.1em;
 }
+
 
 .submit-button {
     font-family: 'Ubuntu', sans-serif;
@@ -64,7 +72,7 @@ textarea {
     border-color: black;
     background-color: #fe019a;
     padding: 7px 20px;
-    border-width: thin;
+    border-width: 0.1em;
     border-radius: 0.5em;
     font-size: 1.5rem;
     cursor: pointer;
@@ -74,3 +82,4 @@ textarea {
     margin-bottom: 1%;
     color: red;
 }
+
