@@ -39,6 +39,8 @@ const listingSchema = new mongoose.Schema({
       // user: {
       //        type:mongoose.Schema.Types.ObjectId, ref:'User'
       // }
+  
+      // we will add reviews here as well
 },
       {
       timestamps: true,
