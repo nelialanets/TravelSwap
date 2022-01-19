@@ -135,6 +135,7 @@ p{
     border-radius: 10px;
     padding: 3px;
     position: relative;
+    cursor: pointer;
 }
 
 .listingItem .title {
