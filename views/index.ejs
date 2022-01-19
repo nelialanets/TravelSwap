@@ -40,7 +40,8 @@ $(document).ready(function(){
       });
 
       $(document).ready(function(){
-           $('input.autocomplete').autocomplete({
+           $('input.autocomplete').autocomplete
+           ({
                 data:{
                      'Aruba': null,
                      'Bali': null,
@@ -48,8 +49,11 @@ $(document).ready(function(){
                      'Hawaii': nul,
                      'Brazil': null,
                     },
-               });
-          });
+            });
+       });
+       $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
 </script>
 
 <style>
@@ -123,11 +127,11 @@ $(document).ready(function(){
    </div>
   
    <!-- Serch section -->
-   <section id="search" class="section section-searc grey lighten-5 black-text center scrollspy">
+   <section id="search" class="section section-searc black-text center scrollspy">
      <div class="container">
        <div class='row'>
          <div class="col s12">
-           <div class="input-field">
+           <div class="input-field ">
              <input type="text" id="autocomplete-input" class=" white black-text autocomplete"   placeholder="Search">
            </div>
          </div>
@@ -137,7 +141,7 @@ $(document).ready(function(){
 
    
    <!-- destination Cards -->
-   <div class ="container" style= "margin-top: 5% ;">
+   <div class ="container" style= "margin-top: 1% ;">
     <div class="container">
       <div class="row">
         <div class="col s12 m4 ">
@@ -213,10 +217,71 @@ $(document).ready(function(){
 
       </div>
     </div>
-<!-- Footer -->
+<!-- Gallery -->
+<!-- Row One -->
+<section id="gallery" class="section section-gallery scrollspy">
+  <div class="container">
+    <h4 class="centered">
+      <span class="pink-text"> Photo </span> Gallery</h4>
+    </h4>
+    <div class="row">
+      <div class="col s12 m3">
+        <img src="http://source.unsplash.com/1000x900/?Asia" alt="" class="materialboxed responsive-img">
+      </div>
+      <div class="row">
+        <div class="col s12 m3">
+          <img src="http://source.unsplash.com/1000x900/?hawaii" alt="" class="materialboxed responsive-img">
+        </div> 
+        <div class="row">
+          <div class="col s12 m3">
+            <img src="http://source.unsplash.com/1000x900/?africa" alt="" class="materialboxed responsive-img">
+          </div>
+          <div class="row">
+            <div class="col s12 m3">
+              <img src="http://source.unsplash.com/1000x900/?balli" alt="" class="materialboxed responsive-img">
+            </div>
+    </div>
+    <!-- Row two -->
+    <div class="row">
+      <div class="col s12 m3">
+        <img src="http://source.unsplash.com/1000x900/?europe" alt="" class="materialboxed responsive-img">
+      </div>
+      <div class="row">
+        <div class="col s12 m3">
+          <img src="http://source.unsplash.com/1000x900/?peru" alt="" class="materialboxed responsive-img">
+        </div> 
+        <div class="row">
+          <div class="col s12 m3">
+            <img src="http://source.unsplash.com/1000x900/?london" alt="" class="materialboxed responsive-img">
+          </div>
+          <div class="row">
+            <div class="col s12 m3">
+              <img src="http://source.unsplash.com/1000x900/?dubai" alt="" class="materialboxed responsive-img">
+            </div>
+    </div>
+    <!-- Row 3 -->
+    <div class="row">
+      <div class="col s12 m3">
+        <img src="http://source.unsplash.com/1000x900/?alaska" alt="" class="materialboxed responsive-img">
+      </div>
+      <div class="row">
+        <div class="col s12 m3">
+          <img src="http://source.unsplash.com/1000x900/?travel" alt="" class="materialboxed responsive-img">
+        </div> <div class="row">
+          <div class="col s12 m3">
+            <img src="http://source.unsplash.com/1000x900/?australia" alt="" class="materialboxed responsive-img">
+          </div>
+          <div class="row">
+            <div class="col s12 m3">
+              <img src="http://source.unsplash.com/1000x900/?india"  alt="" class="materialboxed responsive-img">
+            </div>
+    </div>
 
-  <footer class="page-footer">
-   <div class="container">
+  </div>
+</section>
+<!-- Footer -->
+  <footer class="page-footer pink leighten-1 ">
+   <div class="container center">
     <div class="row">
       <div class="col l6 s12">
         <h5 class="white-text">Footer Content</h5>
