@@ -36,8 +36,7 @@ const postListing = async (req, res) => {
     try {
         const newListing = await listing.save()
 
-        // res.redirect(`listings/${newListing.id}`)
-        res.redirect('listings')
+        res.redirect(`listings/${newListing.id}`)
     } catch {
         res.render('listings/newlist', {
             listing: listing,
@@ -47,7 +46,7 @@ const postListing = async (req, res) => {
 
 }
 // * Show all listings
-const index= async (req, res)=> {
+const index = async (req, res)=> {
 
     let searchOptions = {}
 
