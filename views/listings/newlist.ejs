@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<%- include('../partials/head') %>
+
+<div class="navbar-fixed">
+   <nav class="pink lighten-1 z-depth-5">
+     <div class="container">
+     <div class="nav-wrapper">
+       <a href="/index" class="brand-logo">TravelSwap</a>
+       <a href="/index" data-target="mobile-nav"class="sidenav-trigger"><i class="material-icons">menu</i>
+       </a>
+       <ul class="right hide-on-med-and-down">
+         <li><a href="/listings">View Swaps</a> </li>
+         <li><a href="/listings/newlisting">Add Swap</a></li>
+         <li><a href="reviewsF/new.ejs">Reviews</a></li>
+         <li><a href="#">Help</a></li>
+       </ul>
+     </div>
+   </nav>
+ </div>
+</div>
+</head>
+<body>
 <form action="/listings" method='POST' class='💪'>
    <h1 class='listing-header'>Make a Listing</h1>
    <a class='cancel-link' href="/">Cancel</a>
@@ -5,3 +29,5 @@
    <%- include('../partials/error-message') %>
    <button class='submit-button' type='submit'>Create</button>
 </form>
+</body>
+</html>
