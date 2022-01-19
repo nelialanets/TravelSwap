@@ -27,12 +27,12 @@
     </div>
   </form>
   <% listings.forEach(listing => { %>
-    <div class='listingItem'>
+    <a href='/listings/<%= listing.id %>' class='listingItem'>
       <span class='title'><%= listing.name %></span>
       <span class='datePosted'><%= `Posted: ${listing.datePosted}` %></span>
       <span class='listLocation'><%= listing.location %></span>
       <span class='listDescription'><%= listing.description %></span>
       <span class='timeSpan'><%= `${listing.startDate} - ${listing.endDate}` %></span>
-    </div>
+    </a>
 <% }) %>
 </div>

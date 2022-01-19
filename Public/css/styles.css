@@ -136,6 +136,7 @@ p{
     padding: 3px;
     position: relative;
     cursor: pointer;
+    color: black;
 }
 
 .listingItem .title {
