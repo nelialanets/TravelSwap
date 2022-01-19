@@ -44,7 +44,7 @@ html {
     text-align: center;
 }
 
-.input-field {
+/* .input-field {
     grid-column: 2;
     height: 40px;
     width: 300px;
@@ -53,8 +53,15 @@ html {
     border-color: black;
     border-width: 0.1em;
     border-radius: 15px;
-    background-color: #faf0e6;
-}
+    background-color: #faf0e6; */
+/* } */
+
+.section-search input{
+    padding: 5px !important;
+    font-size: 15px !important;
+    width: 90% !important;
+    border: 1px solid black!important;
+  }
 
 #desc {
     font-family: 'Ubuntu', sans-serif;
@@ -83,7 +90,7 @@ html {
     color: red;
 }
 
-.section-search input {
+/* .section-search input {
 padding: 5px !important;
 font-size: 18px !important;
 width: 90% !important;
@@ -92,4 +99,8 @@ border-radius: 15%;
 }
 p{
      color:blue
+} */
+.section-follow .fa-3x{
+    margin: 5px 10px;
+
 }
