@@ -1,14 +1,32 @@
-
-<!DOCTYPE html>
-<html lang="en">
 <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
-</head>
-<body>
-     <h1>All listing </h1>
+     <%- include('../partials/head') %>
      
-</body>
-</html>
+     <div class="navbar-fixed">
+        <nav class="pink lighten-1 z-depth-5">
+          <div class="container">
+          <div class="nav-wrapper">
+            <a href="/index" class="brand-logo">TravelSwap</a>
+            <a href="/index" data-target="mobile-nav"class="sidenav-trigger"><i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="/listings">View Swaps</a> </li>
+              <!-- <li><a href="/listings/newlisting">Add Swap</a></li> -->
+              <li><a href="reviewsF/new.ejs">Reviews</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+     </div>
+</head>
+<div class='show-all-flex'>
+  <form action="/listings" method='GET'>
+    <div class='search'>
+      <input type="text" name='name' value=''>
+      <button type='submit'>Search</button>
+    </div>
+  </form>
+  <% listings.forEach(listing => { %>
+    <li><%= listing.name %></li>
+<% }) %>
+</div>

@@ -1,11 +1,12 @@
 const Listing = require('../models/Listing');
 const Review = require('../models/Review')
 
+
 const index=(req, res)=>{
      Listing.find({}, function(err, allListings){
           if(err) return res.send(err)
           const context = {listings: allListings};
-          res.render('listings/showAll',context);
+          res.render('listings/showAll', context);
      });
 };
 
