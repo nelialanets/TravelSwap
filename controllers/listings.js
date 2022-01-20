@@ -31,6 +31,7 @@ const postListing = async (req, res) => {
         description: req.body.description,
         startDate: req.body.startDate,
         endDate: req.body.endDate,
+        img: 'hello',
     })
 
     try {
@@ -78,8 +79,8 @@ const show = (req, res)=>{
 const edit = (req, res) => {
     res.send('Edit Listing ' + req.params.id)
 }
-// * Update the listing
 
+// * Update the listing
 const updateListing = (req, res) => {
     res.send('Updates listing ' + req.params.id)
 }
