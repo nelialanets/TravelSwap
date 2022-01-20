@@ -52,11 +52,11 @@ html {
     height: 40px;
     width: 300px;
     font-size: 1.5rem;
-    border-style: solid;
-    border-color: black;
-    border-width: 0.1em;
-    border-radius: 15px;
-    background-color: #faf0e6; 
+    /* border-style: solid; */
+    /* border-color: black; */
+    /* border-width: 0.1em;
+    border-radius: 15px; */
+    /* background-color: #faf0e6;  */
  }
 
 .section-search input{
@@ -69,10 +69,10 @@ html {
 #desc {
     font-family: 'Ubuntu', sans-serif;
     resize: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     height: 220px;
     /*  * double size of other width because of pixel height hardcoding * */
-    border-width: 0.1em;
+    /* border-width: 0.1em; */
 }
 
 
