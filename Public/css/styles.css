@@ -68,9 +68,11 @@ html {
 
 #desc {
     font-family: 'Ubuntu', sans-serif;
+    padding: 5px;
     resize: none;
     font-size: 1.2rem;
     height: 220px;
+    border-radius: 0.8em;
     /*  * double size of other width because of pixel height hardcoding * */
     /* border-width: 0.1em; */
 }
@@ -192,6 +194,7 @@ p{
     border-radius: 25px;
     padding: 0 0 0 10px;
     margin-bottom: 10vh;
+    border-style: solid;
 }
 
 .listing-box h1 {
@@ -224,8 +227,10 @@ p{
     top: 0px;
     right: 0px;
     margin: 10px 10px 0 0;
-    border-style: none;
-    border-radius: 5px;
+    border-style: solid;
+    border-radius: 0.8em;
+    border-width: 0.15em;
+    border-color: black;
     background: #fe019a !important;
     cursor: pointer;
     text-align: center;
@@ -239,8 +244,10 @@ p{
     top: 8%;
     right: 0px;
     margin: 10px 10px 0 0;
-    border-style: none;
-    border-radius: 5px;
+    border-style: solid;
+    border-radius: 0.8em;
+    border-width: 0.15em;
+    border-color: black;
     background: red !important;
     cursor: pointer;
     text-align: center;
