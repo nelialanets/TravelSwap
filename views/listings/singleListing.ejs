@@ -22,7 +22,9 @@
 <div class='single-listing-container'>
     <div class='listing-box'>
         <h1><%= listing.name %></h1>
-        <h3><%= `Available: ${listing.startDate} - ${listing.endDate}` %></h3>
+        <h3 class='individualLocation'><%= listing.location %></h3>
+        <h3 class='individualDate'><%= `Available: ${listing.startDate} - ${listing.endDate}` %></h3>
         <p><%= listing.description %></p>
+        <button>Edit</button>
     </div>
 </div>

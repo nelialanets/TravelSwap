@@ -179,14 +179,18 @@ p{
     min-width: 100%;
     min-height: 100vh;
     align-items: center;
+    justify-content: center;
 }
 
 .listing-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     min-width: 40%;
     min-height: 50vh;
+    position: relative;
+    background-color: #ebebeb;
+    border-radius: 25px;
+    padding: 0 0 0 10px;
 }
 
 .listing-box h1 {
@@ -194,5 +198,33 @@ p{
 }
 
 .listing-box p {
+    font-size: 1.5rem;
+}
+
+.individualLocation {
+    font-size: 1.6rem;
+    margin-bottom: -10px;
+    color:#fe019a;
+}
+
+.individualDate {
+    font-size: 1.8rem;
+    color: gray;
+}
+
+.listing-box p {
     color: black;
+}
+
+.listing-box button {
+    width: 7%;
+    height: 7%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 10px 10px 0 0;
+    border-style: none;
+    border-radius: 5px;
+    background: #fe019a;
+    cursor: pointer;
 }
