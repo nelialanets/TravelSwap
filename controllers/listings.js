@@ -1,48 +1,13 @@
 const Listing = require('../models/Listing');
 const Review = require('../models/Review')
 
-const show = (req, res)=>{
-          Listing.findById(req.params.id)
-          .populate("reviews")// basicallyUser.findById(), lets you reference documents in other collections by automatically replacing the specified paths in the document with document(s) from other collections
-          //exec executes the query
-          .exec((err, foundListing)=>{
-               if(err) return res.send(err);
-               console.log(foundListing)
-               const context = {listign: foundListing};
-               res.render("listings/showAll", context)
-          })
-     }
 
-     const create = (req, res)=> {
-        Listing.create(req.body, function(err, createdListing){
-            if (err) res.send(err);
-            return res.redirect('/listings')
-        })
-    }
-
-
- const edit = (req, res) => {
-     Listing.findById(req.params.id, (err, foundListing)=>{
-         if (err) res.send(err);
-          const context = {listing: foundListing};
-          return res.render('listings/edit', context)
+const create = (req, res)=> {
+    Listing.create(req.body, function(err, createdListing){
+    if (err) res.send(err);
+    return res.redirect('/listings')
 })
- }
-
- const remove = (req, res)=>{
-     addEventListener.Listing.findByIdandDelete(req.params.id, (err, deleteListing)=>{
-         if(err) return res.send(err);
-         Review.deleteMany(
-            {listing: deleteListing._id},
-             (err, deleteListing)=>{
-                 console.log(deleteListing);
-                 if(err) return res.send(err)
-            return res.redirect('/listings')
-            }
-
-        )
-    })
- }
+}
  
 
 // * New Listing Route
@@ -71,8 +36,7 @@ const postListing = async (req, res) => {
     try {
         const newListing = await listing.save()
 
-        // res.redirect(`listings/${newListing.id}`)
-        res.redirect('listings')
+        res.redirect(`listings/${newListing.id}`)
     } catch {
         res.render('listings/newlist', {
             listing: listing,
@@ -81,8 +45,8 @@ const postListing = async (req, res) => {
     }
 
 }
-
-const index= async (req, res)=> {
+// * Show all listings
+const index = async (req, res)=> {
 
     let searchOptions = {}
 
@@ -103,13 +67,27 @@ const index= async (req, res)=> {
     } catch {
         res.redirect('/')
     }
-
-    // Listing.find({}, function(err, allListings){
-    //      if(err) return res.send(err)
-    //      const context = {listings: allListings};
-    //      res.render('listings/showAll', context);
-    // });
 };
+// * Show one listing
+const show = (req, res)=>{
+
+    res.send('Show Listing ' + req.params.id)
+
+}
+// * Edit listing menu
+const edit = (req, res) => {
+    res.send('Edit Listing ' + req.params.id)
+}
+// * Update the listing
+
+const updateListing = (req, res) => {
+    res.send('Updates listing ' + req.params.id)
+}
+
+// * Delete 
+const remove = (req, res)=>{
+    res.send('Delete listing ' + req.params.id)
+}
 
  
 module.exports={
@@ -120,4 +98,5 @@ module.exports={
      create,
      remove,
      postListing,
+     updateListing,
 }
