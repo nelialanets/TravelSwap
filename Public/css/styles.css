@@ -56,7 +56,7 @@ html {
     border-color: black;
     border-width: 0.1em;
     border-radius: 15px;
-    background-color: #faf0e6; */
+    background-color: #faf0e6; 
  }
 
 .section-search input{
@@ -161,7 +161,14 @@ p{
     font-size: 0.8rem;
     color: #EC417A;
 }
+
+.timeSpan {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-right: 3px;
 } 
+
 .section-follow .fa-3x{
     margin: 5px 10px;
 

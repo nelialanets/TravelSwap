@@ -27,7 +27,6 @@ const listingSchema = new mongoose.Schema({
       },
       img: {
           type: String,
-          required: true
        },
        review: [{
             type:mongoose.Schema.Types.ObjectId, ref:'Review'
