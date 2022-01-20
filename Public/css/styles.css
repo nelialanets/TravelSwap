@@ -190,11 +190,10 @@ p{
     min-width: 800px;
     min-height: 450px;
     position: relative;
-    background-color: #ebebeb;
     border-radius: 25px;
     padding: 0 0 0 10px;
     margin-bottom: 10vh;
-    border-style: solid;
+    border-style: none;
 }
 
 .listing-box h1 {

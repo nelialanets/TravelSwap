@@ -8,7 +8,6 @@ const create = (req, res)=> {
     return res.redirect('/listings')
 })
 }
- 
 
 // * New Listing Route
 const newListing = (req, res)=>{
@@ -63,26 +62,21 @@ const index = async (req, res)=> {
             searchOptions: req.query,
         })
 
-        console.log(searchOptions)
-
     } catch {
         res.redirect('/')
     }
 };
 // * Show one listing
 const show = async (req, res)=>{
-
     try {
         const listing = await Listing.findById(req.params.id)
         res.render('listings/singleListing', {listing: listing})
     } catch {
         res.redirect('/listings')
     }
-
 }
 // * Edit listing menu
 const edit = async (req, res) => {
-
     try {
         const listing =  await Listing.findById(req.params.id)
         res.render('listings/edit', {listing: listing})
