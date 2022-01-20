@@ -185,12 +185,13 @@ p{
 .listing-box {
     display: flex;
     flex-direction: column;
-    min-width: 40%;
-    min-height: 50vh;
+    min-width: 800px;
+    min-height: 450px;
     position: relative;
     background-color: #ebebeb;
     border-radius: 25px;
     padding: 0 0 0 10px;
+    margin-bottom: 10vh;
 }
 
 .listing-box h1 {
@@ -225,6 +226,6 @@ p{
     margin: 10px 10px 0 0;
     border-style: none;
     border-radius: 5px;
-    background: #fe019a;
+    background: #fe019a !important;
     cursor: pointer;
 }
