@@ -1,14 +1,6 @@
 const Listing = require('../models/Listing');
 const Review = require('../models/Review')
 
-const index=(req, res)=>{
-     Listing.find({}, function(err, allListings){
-          if(err) return res.send(err)
-          const context = {listings: allListings};
-          res.render('listings/showAll',context);
-     });
-};
-
 const show = (req, res)=>{
           Listing.findById(req.params.id)
           .populate("reviews")// basicallyUser.findById(), lets you reference documents in other collections by automatically replacing the specified paths in the document with document(s) from other collections
@@ -80,8 +72,7 @@ const postListing = async (req, res) => {
         const newListing = await listing.save()
 
         // res.redirect(`listings/${newListing.id}`)
-        // * This is confusing, I don't think we need to worry about this yet.
-        res.redirect('listings/newlisting')
+        res.redirect('listings')
     } catch {
         res.render('listings/newlist', {
             listing: listing,
@@ -90,6 +81,35 @@ const postListing = async (req, res) => {
     }
 
 }
+
+const index= async (req, res)=> {
+
+    let searchOptions = {}
+
+    if (req.query.location != null && req.query.location !== '') {
+        searchOptions.location = new RegExp(req.query.location, 'i')
+    }
+
+    try {
+        const listings = await Listing.find(searchOptions)
+
+        res.render('listings/index', {
+            listings: listings,
+            searchOptions: req.query,
+        })
+
+        console.log(searchOptions)
+
+    } catch {
+        res.redirect('/')
+    }
+
+    // Listing.find({}, function(err, allListings){
+    //      if(err) return res.send(err)
+    //      const context = {listings: allListings};
+    //      res.render('listings/showAll', context);
+    // });
+};
 
  
 module.exports={
