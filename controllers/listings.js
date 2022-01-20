@@ -30,7 +30,7 @@ const postListing = async (req, res) => {
         description: req.body.description,
         startDate: req.body.startDate,
         endDate: req.body.endDate,
-        img: 'hello',
+        img: '',
     })
 
     try {
