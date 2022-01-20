@@ -124,8 +124,24 @@ const updateListing = async (req, res) => {
 }
 
 // * Delete 
-const remove = (req, res)=>{
-    res.send('Delete listing ' + req.params.id)
+const remove = async (req, res)=>{
+    let listing;
+
+    try {
+
+        listing = await Listing.findById(req.params.id)
+
+        await listing.remove()
+        res.redirect('/listings')
+
+    } catch {
+        if (listing == null) {
+            res.redirect('/')
+        } else {
+            res.redirect(`/listings/${listing.id}`)
+        }
+        
+    }
 }
 
  

@@ -217,7 +217,7 @@ p{
     color: black;
 }
 
-.listing-box a {
+.editButton {
     width: 7%;
     height: 6%;
     position: absolute;
@@ -227,6 +227,21 @@ p{
     border-style: none;
     border-radius: 5px;
     background: #fe019a !important;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+}
+
+.deleteButton {
+    width: 7%;
+    height: 6%;
+    position: absolute;
+    top: 8%;
+    right: 0px;
+    margin: 10px 10px 0 0;
+    border-style: none;
+    border-radius: 5px;
+    background: red !important;
     cursor: pointer;
     text-align: center;
     color: black;

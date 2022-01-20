@@ -10,7 +10,7 @@
            </a>
            <ul class="right hide-on-med-and-down">
              <li><a href="/listings">View Swaps</a> </li>
-             <!-- <li><a href="/listings/newlisting">Add Swap</a></li> -->
+             <li><a href="/listings/newlisting">Add Swap</a></li>
              <li><a href="reviewsF/new.ejs">Reviews</a></li>
              <li><a href="#">Help</a></li>
            </ul>
@@ -25,6 +25,9 @@
         <h3 class='individualLocation'><%= listing.location %></h3>
         <h3 class='individualDate'><%= `Available: ${listing.startDate} - ${listing.endDate}` %></h3>
         <p><%= listing.description %></p>
-        <a href='/listings/<%= listing.id %>/edit'>Edit</a>
+        <a class='editButton' href='/listings/<%= listing.id %>/edit'>Edit</a>
+        <form method='POST' action='/listings/<%= listing.id %>?_method=DELETE'>
+            <button type='submit' class='deleteButton' href="/listings/<%= listing.id %>">Delete</button>
+        </form>
     </div>
 </div>
