@@ -67,7 +67,6 @@ html {
     /* border-width: 0.1em;
     border-radius: 15px; */
     /* background-color: #faf0e6;  */
- }
 
 
 /* .section-search input{
@@ -94,6 +93,7 @@ html {
 .submit-button {
     position: relative;
     transition: .4s ease-in; 
+    margin-bottom: 10px;
     z-index: 1;
     top: 15px;
     height:  40px;
