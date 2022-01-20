@@ -23,11 +23,11 @@
   <div class="container">
     <div class='row'>
       <div class="col s12">
-        <div class="input-field-form">
+        <form class="input-field-form">
           <input type="text" name='location' placeholder='search locations...' value='<%= searchOptions.location %>'>
           <button type='submit'>Search</button>
-        </div>
-     <div class="navbar-fixed">
+        </form>
+     <!-- <div class="navbar-fixed">
         <nav class="pink lighten-1 z-depth-5">
           <div class="container">
           <div class="nav-wrapper">
@@ -42,7 +42,7 @@
             </ul>
           </div>
         </nav>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -57,7 +57,7 @@
       <span class='listLocation'><%= listing.location %></span>
       <span class='listDescription'><%= listing.description %></span>
       <span class='timeSpan'><%= `${listing.startDate} - ${listing.endDate}` %></span>
-      <img  class="img" src="<%= listing.img %>" alt"<%= listing.name %>"></img>
+      <img  class="img" src="<%= listing.img %>" alt="<%= listing.img %>"></img>
     </a>
 <% }) %>
  </div>
