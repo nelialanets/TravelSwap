@@ -29,7 +29,7 @@ const listingSchema = new mongoose.Schema({
           type: String,
        },
        review: [{
-            type:mongoose.Schema.Types.ObjectId, ref:'Review'
+            type: mongoose.Schema.Types.ObjectId, ref:'Review',
        }]
 },
       {

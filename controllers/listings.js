@@ -70,9 +70,14 @@ const index = async (req, res)=> {
     }
 };
 // * Show one listing
-const show = (req, res)=>{
+const show = async (req, res)=>{
 
-    res.send('Show Listing ' + req.params.id)
+    try {
+        const listing = await Listing.findById(req.params.id)
+        res.render('listings/singleListing', {listing: listing})
+    } catch {
+        res.redirect('/listings')
+    }
 
 }
 // * Edit listing menu
