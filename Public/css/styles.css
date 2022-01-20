@@ -116,32 +116,39 @@ p{
 }
 
 .search {
+    margin-top: 10%;
     display: flex;
     flex-direction: row;
 }
 
 .search button {
-    height: 25px;
     position: relative;
+    transition: .4s ease-in; 
+    z-index: 1;
     top: 15px;
-    background-color: #EC417A;
-    height: 30px;
-    width: 100px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 0.8em;
+    height:  40px;
+    width: 110px;
     cursor: pointer;
 }
-
+.search button::before,
+button::after{ position: absolute;
+    content:"";
+    z-index: -1;
+}
+.search button:hover{
+    background-color: #ec417a;
+    box-shadow: 0 0 5px #ec417a, 0 0 25px #ec417a, 0 0 50px #ec417a, 0 0 200px #ec417a ;
+}
 .listingItem {
     display: flex;
     flex-direction: column;
     min-height: 15vh;
     width: 40%;
     max-width: 40%;
-    border-style: solid;
+    margin-top: 5%;
+    border: 1px solid;
     border-radius: 10px;
-    padding: 3px;
+    padding: 6px;
     position: relative;
     cursor: pointer;
     color: black;
@@ -172,4 +179,8 @@ p{
 .section-follow .fa-3x{
     margin: 5px 10px;
 
+}
+.img{
+    width: 20%;
+    padding: 10px;
 }

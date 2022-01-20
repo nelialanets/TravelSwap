@@ -5,8 +5,8 @@
         <nav class="pink lighten-1 z-depth-5">
           <div class="container">
           <div class="nav-wrapper">
-            <a href="/index" class="brand-logo">TravelSwap</a>
-            <a href="/index" data-target="mobile-nav"class="sidenav-trigger"><i class="material-icons">menu</i>
+            <a href="/" class="brand-logo">TravelSwap</a>
+            <a href="/" data-target="mobile-nav"class="sidenav-trigger"><i class="material-icons">menu</i>
             </a>
             <ul class="right hide-on-med-and-down">
               <li><a href="/listings">View Swaps</a> </li>
@@ -33,6 +33,7 @@
       <span class='listLocation'><%= listing.location %></span>
       <span class='listDescription'><%= listing.description %></span>
       <span class='timeSpan'><%= `${listing.startDate} - ${listing.endDate}` %></span>
+      <img  class="img" src="<%= listing.img %>" alt"<%= listing.name %>"></img>
     </a>
 <% }) %>
 </div>
