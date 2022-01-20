@@ -81,13 +81,46 @@ const show = async (req, res)=>{
 
 }
 // * Edit listing menu
-const edit = (req, res) => {
-    res.send('Edit Listing ' + req.params.id)
+const edit = async (req, res) => {
+
+    try {
+        const listing =  await Listing.findById(req.params.id)
+        res.render('listings/edit', {listing: listing})
+    } catch {
+        res.redirect('/listings')
+    }
 }
 
 // * Update the listing
-const updateListing = (req, res) => {
-    res.send('Updates listing ' + req.params.id)
+const updateListing = async (req, res) => {
+
+    let listing;
+
+    try {
+
+        listing = await Listing.findById(req.params.id)
+
+        listing.name = req.body.name
+        listing.location = req.body.location
+        listing.description = req.body.description
+        listing.startDate = req.body.startDate
+        listing.endDate = req.body.endDate
+        listing.img = 'hello'
+
+        await listing.save()
+        res.redirect(`/listings/${listing.id}`)
+
+    } catch {
+        if (listing == null) {
+            res.redirect('/')
+        } else {
+            res.render('listings/edit', {
+                listing: listing,
+                errorMessage: 'You must fill in all fields.',
+            })
+        }
+        
+    }
 }
 
 // * Delete 

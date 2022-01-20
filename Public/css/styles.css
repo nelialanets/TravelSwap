@@ -217,9 +217,9 @@ p{
     color: black;
 }
 
-.listing-box button {
+.listing-box a {
     width: 7%;
-    height: 7%;
+    height: 6%;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -228,4 +228,6 @@ p{
     border-radius: 5px;
     background: #fe019a !important;
     cursor: pointer;
+    text-align: center;
+    color: black;
 }

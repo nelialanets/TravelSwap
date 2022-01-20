@@ -1,12 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=, initial-scale=1.0">
-     <title>Document</title>
+<html>
+  <head>
+<%- include('../partials/head') %>
+
+<div class="navbar-fixed">
+   <nav class="pink lighten-1 z-depth-5">
+     <div class="container">
+     <div class="nav-wrapper">
+       <a href="/" class="brand-logo">TravelSwap</a>
+       <a href="/" data-target="mobile-nav"class="sidenav-trigger"><i class="material-icons">menu</i>
+       </a>
+       <ul class="right hide-on-med-and-down">
+         <li><a href="/listings">View Swaps</a> </li>
+         <!-- <li><a href="/listings/newlisting">Add Swap</a></li> -->
+         <li><a href="reviewsF/new.ejs">Reviews</a></li>
+         <li><a href="#">Help</a></li>
+       </ul>
+     </div>
+   </nav>
+ </div>
+</div>
 </head>
 <body>
-   <h1>Edit</h1>
+<form action="/listings/<%= listing.id %>?_method=PUT" method='POST' class='💪'>
+   <h1 class='listing-header'>Edit Listing</h1>
+   <%- include('../partials/form-fields') %>
+   <%- include('../partials/error-message') %>
+   <button class='submit-button' type='submit'>Update</button>
+   <a class='cancel-link' href="/listings/<%= listing.id %>">Cancel</a>
+</form>
 </body>
 </html>
