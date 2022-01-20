@@ -62,6 +62,14 @@ html {
    
  } 
 
+    /* border-style: solid; */
+    /* border-color: black; */
+    /* border-width: 0.1em;
+    border-radius: 15px; */
+    /* background-color: #faf0e6;  */
+ }
+
+
 /* .section-search input{
     padding: 5px !important;
     font-size: 15px !important;
@@ -70,14 +78,16 @@ html {
   
 
 #desc {
-    font-family: 'Ubuntu', sans-serif;
+    padding: 5px;
     resize: none;
     width: 150%;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     height: 220px;
+    border-radius: 0.8em;
     /*  * double size of other width because of pixel height hardcoding * */
     border-width: 0.1em;
     border: 1px solid black;
+    /* border-width: 0.1em; */
 }
 
 
@@ -204,7 +214,84 @@ button::after{ position: absolute;
 
 .section-follow .fa-3x{
     margin: 5px 10px;
+}
 
+.single-listing-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.listing-box {
+    display: flex;
+    flex-direction: column;
+    min-width: 800px;
+    min-height: 450px;
+    position: relative;
+    border-radius: 25px;
+    padding: 0 0 0 10px;
+    margin-bottom: 10vh;
+    border-style: none;
+}
+
+.listing-box h1 {
+    margin-bottom: -10px;
+}
+
+.listing-box p {
+    font-size: 1.5rem;
+}
+
+.individualLocation {
+    font-size: 1.6rem;
+    margin-bottom: -10px;
+    color:#fe019a;
+}
+
+.individualDate {
+    font-size: 1.8rem;
+    color: gray;
+}
+
+.listing-box p {
+    color: black;
+}
+
+.editButton {
+    width: 7%;
+    height: 6%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 10px 10px 0 0;
+    border-style: solid;
+    border-radius: 0.8em;
+    border-width: 0.15em;
+    border-color: black;
+    background: #fe019a !important;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+}
+
+.deleteButton {
+    width: 7%;
+    height: 6%;
+    position: absolute;
+    top: 8%;
+    right: 0px;
+    margin: 10px 10px 0 0;
+    border-style: solid;
+    border-radius: 0.8em;
+    border-width: 0.15em;
+    border-color: black;
+    background: red !important;
+    cursor: pointer;
+    text-align: center;
+    color: black;
 }
 .img{
     width: 20%;
