@@ -18,7 +18,7 @@ const create =(req,res)=>{
      })
 }
 const destroy =(req,res)=>{
-     Listing.findById(req.params.id, function (err, movie) {
+     Listing.findById(req.params.id, function (err,) {
        if (err) return res.send(err);
        Listing.reviews.remove();
        Listing.save(function (err) {

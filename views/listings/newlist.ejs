@@ -2,7 +2,17 @@
 <html>
   <head>
 <%- include('../partials/head') %>
+<%- include('../partials/sideBar') %>
+<%- include('../partials/navBar') %>
 
+<script>
+
+$(document).ready(function(){
+    $('.parallax').parallax();
+  });
+</script>
+
+  </head>
 <div class="navbar-fixed">
    <nav class="pink lighten-1 z-depth-5">
      <div class="container">
@@ -22,12 +32,24 @@
 </div>
 </head>
 <body>
-<form action="/listings" method='POST' class='💪'>
-   <h1 class='listing-header'>Make a Listing</h1>
-   <%- include('../partials/form-fields') %>
-   <%- include('../partials/error-message') %>
-   <button class='submit-button' type='submit'>Create</button>
-   <a class='cancel-link' href="/">Cancel</a>
-</form>
+  <div class="parallax-container">
+    <div class="parallax"><img src="/public/images/Tahity.jpeg"></div>
+  </div>
+  <div class="section s4 m4">
+    <div class="row container">
+      <section class="main-form">
+      <h2 class="listing-header">Create your listing </h2>
+      <form action="/listings" method='POST' class='💪'>
+        <%- include('../partials/form-fields') %>
+        <%- include('../partials/error-message') %>
+        <button class='submit-button' type='submit'>Create</button>
+        <a class='cancel-link' href="/">Cancel</a>
+     </form>
+    </section>
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="/public/images/SF.jpeg"></div>
+  </div>
 </body>
 </html>
