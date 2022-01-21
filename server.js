@@ -1,6 +1,6 @@
 require('dotenv').config();
 //Express
-const morgan = require('morgan');
+const morgan = require('morgan')
 const express = require('express');
 const methodOverride = require("method-override");
 const path = require('path');
@@ -13,13 +13,12 @@ const db = require('./config/database')
 const indexRouter = require('./routes/index');
 const listingRouter = require ('./routes/listings');
 const reviewRouter = require('./routes/reviews');
-const res = require('express/lib/response');
 
 /* ==== Instanced Modules  ==== */
 const app = express();
 
 /* ====  Configuration  ==== */
-const PORT = 4000;
+const PORT = process.env.PORT || 4000
 
 // Configuring our Express app
 app.set('view engine', 'ejs');
