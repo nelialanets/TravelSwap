@@ -99,7 +99,7 @@ const updateListing = async (req, res) => {
         listing.description = req.body.description
         listing.startDate = req.body.startDate
         listing.endDate = req.body.endDate
-        listing.img = 'hello'
+        listing.img = ''
 
         await listing.save()
         res.redirect(`/listings/${listing.id}`)

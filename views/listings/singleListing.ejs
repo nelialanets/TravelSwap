@@ -1,24 +1,31 @@
 <head>
     <%- include('../partials/head') %>
-    
-    <div class="navbar-fixed">
-       <nav class="pink lighten-1 z-depth-5">
-         <div class="container">
-         <div class="nav-wrapper">
-           <a href="/" class="brand-logo">TravelSwap</a>
-           <a href="/" data-target="mobile-nav"class="sidenav-trigger"><i class="material-icons">menu</i>
-           </a>
-           <ul class="right hide-on-med-and-down">
-             <li><a href="/listings">View Swaps</a> </li>
-             <li><a href="/listings/newlisting">Add Swap</a></li>
-             <li><a href="reviewsF/new.ejs">Reviews</a></li>
-             <li><a href="#">Help</a></li>
-           </ul>
-         </div>
-       </nav>
-     </div>
-    </div>
+    <%- include('../partials/navBar') %>
+
+    <script>
+$(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+    </script>
 </head>
+<body>
+  <section id="gallery" class="section section-gallery scrollspy">
+    <div class="container">
+
+      <div class="row">
+        <div class="col s12 m4">
+          <img src="http://source.unsplash.com/1000x900/?New Port Villa" alt="" class="materialboxed responsive-img">
+        </div>
+        <div class="row">
+          <div class="col s12 m4">
+            <img src="http://source.unsplash.com/1000x900/?Laguna Beach Houses" alt="" class="materialboxed responsive-img">
+          </div> 
+          <div class="row">
+            <div class="col s12 m4">
+              <img src="http://source.unsplash.com/1000x900/? Houses" alt="" class="materialboxed responsive-img">
+            </div>
+            </div>
+          </section>
 <div class='single-listing-container'>
     <div class='listing-box'>
         <h1><%= listing.name %></h1>
@@ -32,3 +39,4 @@
     </div>
     <!-- * Reviews * -->
 </div>
+</body>
