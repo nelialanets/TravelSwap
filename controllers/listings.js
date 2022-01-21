@@ -1,5 +1,5 @@
 const Listing = require('../models/Listing');
-const Review = require('../models/Review')
+const Comment = require('../models/Comment')
 
 
 const create = (req, res)=> {
@@ -117,6 +117,11 @@ const updateListing = async (req, res) => {
     }
 }
 
+const addComment = (req, res) => {
+
+}
+
+
 // * Delete 
 const remove = async (req, res)=>{
     let listing;
@@ -137,7 +142,6 @@ const remove = async (req, res)=>{
         
     }
 }
-
  
 module.exports={
      index,
@@ -148,4 +152,5 @@ module.exports={
      remove,
      postListing,
      updateListing,
+     addComment,
 }

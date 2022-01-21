@@ -1,6 +1,5 @@
-
 const Listing = require('../models/Listing');
-const Review = require('../models/Review');
+const Comment = require('../models/Comment');
 
 
 
