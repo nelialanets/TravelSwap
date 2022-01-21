@@ -23,6 +23,12 @@ const postListing = async (req, res) => {
     let year = date.getFullYear();
     let fullDate = `${month}/${day}/${year}`;
 
+
+    const comment = new Comment({
+        name: 'Sandra',
+        text: 'hello'
+    })
+
     const listing = new Listing({
         name: req.body.name,
         location: req.body.location,
@@ -31,7 +37,9 @@ const postListing = async (req, res) => {
         startDate: req.body.startDate,
         endDate: req.body.endDate,
         img: '',
+        comment: [comment],
     })
+    
 
     try {
         const newListing = await listing.save()
@@ -116,7 +124,7 @@ const updateListing = async (req, res) => {
         
     }
 }
-
+// * Add Comment
 const addComment = (req, res) => {
 
 }

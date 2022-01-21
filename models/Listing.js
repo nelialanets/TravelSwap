@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Comment = require('./Comment');
 
 const listingSchema = new mongoose.Schema({
       name: { 
@@ -28,9 +29,9 @@ const listingSchema = new mongoose.Schema({
       img: {
           type: String,
        },
-       review: [{
-            type: mongoose.Schema.Types.ObjectId, ref:'Review',
-       }]
+       comment: {
+            type: String,
+       }
 },
       {
       timestamps: true,

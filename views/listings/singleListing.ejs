@@ -39,7 +39,10 @@ $(document).ready(function(){
             <button type='submit' class='deleteButton' href="/listings/<%= listing.id %>">Delete</button>
         </form>
     </div>
-    <!-- * Reviews * -->
+</div>
+<!-- * Comments * -->
+<div class='comments'>
+  <%= listing.comment %>
 </div>
 </body>
 <%- include('../partials/footer') %>
