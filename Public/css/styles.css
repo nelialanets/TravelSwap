@@ -259,6 +259,8 @@ button::after{ position: absolute;
 
 .section-follow .fa-3x{
     margin: 5px 10px;
+    margin-right: 10%;
+    padding: 5px;
 }
 
 .single-listing-container {
@@ -346,4 +348,19 @@ button::after{ position: absolute;
     padding: 10px;
 }
 
+h6{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
 
+.brand-logo{
+   margin-right: 5%;
+}
+.page-footer{
+    width: 100%;
+    padding: 2%;
+}
+#galery{
+    align-items: center;
+}
