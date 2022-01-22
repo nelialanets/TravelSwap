@@ -7,12 +7,11 @@ https://travelswap.herokuapp.com/listings/61ebd30972d1313201ba1dd9
 	• As a user, I will be able to browse through the website and view available swap places options, without any auth
 	• As a user, I want to create a listing of my place, add /edit description and delete posting
 	• As a user, I want to search for  postings and search by location
-  As a user, I want to create and post comments!
+	  As a user, I want to create and post comments!
 
 USER FLOW
 
-
-<img width="951" alt="Screen Shot 2022-01-21 at 10 55 05 PM" src="https://user-images.githubusercontent.com/78198715/150628471-72baf9a1-1147-4173-9523-e16d9ccb771a.png">
+<img width="883" alt="Screen Shot 2022-01-22 at 10 27 01 AM" src="https://user-images.githubusercontent.com/78198715/150651016-35f51b21-e7b3-44bc-bbb0-31423288dd12.png">
 
 
 
