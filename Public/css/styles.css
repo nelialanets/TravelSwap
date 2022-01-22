@@ -277,12 +277,40 @@ button::after{ position: absolute;
     display: flex;
     flex-direction: column;
     min-width: 800px;
-    min-height: 450px;
+    min-height: 350px;
     position: relative;
     border-radius: 25px;
     padding: 0 0 0 10px;
     margin-bottom: 10vh;
     border-style: none;
+}
+
+.commentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    width: inherit;
+    gap: 0.5em;
+}
+
+.comments {
+    text-align: left;
+    border-style: solid;
+    border-color: black;
+    border-radius: 0.8em;
+    border-width: 0.1em;
+    width: 800px;
+    padding: 15px;
+}
+
+.comments h3 {
+    font-size: 1.5rem;
+}
+
+.comments p {
+    color: black;
 }
 
 .listing-box h1 {
@@ -363,8 +391,4 @@ h6{
 }
 #galery{
     align-items: center;
-}
-
-.comments {
-    color: black;
 }

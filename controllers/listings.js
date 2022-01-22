@@ -26,7 +26,12 @@ const postListing = async (req, res) => {
 
     const comment = new Comment({
         name: 'Sandra',
-        text: 'hello'
+        text: 'I would like to swap with you!'
+    })
+
+    const comment2 = new Comment({
+        name: 'Bob',
+        text: 'This was a great visit!',
     })
 
     const listing = new Listing({
@@ -37,7 +42,7 @@ const postListing = async (req, res) => {
         startDate: req.body.startDate,
         endDate: req.body.endDate,
         img: '',
-        comment: [comment],
+        comment: [comment, comment2],
     })
     
 

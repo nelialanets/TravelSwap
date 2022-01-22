@@ -39,10 +39,15 @@ $(document).ready(function(){
             <button type='submit' class='deleteButton' href="/listings/<%= listing.id %>">Delete</button>
         </form>
     </div>
-</div>
-<!-- * Comments * -->
-<div class='comments'>
-  <%= listing.comment %>
+    <!-- * Comments * -->
+    <div class='commentContainer'>
+      <% listing.comment.forEach(aComment => { %>
+        <div class='comments'>
+          <h3><%= aComment.name %></h3>
+          <p><%= aComment.text %></p>
+        </div>
+     <% }) %>
+    </div>
 </div>
 </body>
 <%- include('../partials/footer') %>
