@@ -126,6 +126,15 @@ const addComment = async (req, res) => {
 
         listing = await Listing.findById(req.params.id)
 
+        if (req.body.commentName === '' || req.body.commentDescription === '') {
+            res.render('listings/singleListing', {
+                listing: listing,
+                errorMessage: 'You must fill in all fields.',
+            })
+
+            return;
+        }
+
         const newComment = new Comment({
             name: req.body.commentName,
             text: req.body.commentDescription,
@@ -137,11 +146,7 @@ const addComment = async (req, res) => {
         res.redirect(`/listings/${listing.id}`)
 
     } catch {
-        if (listing == null) {
-            res.redirect('/')
-        } else {
-            res.redirect(`/listings/${listing.id}`)
-        }
+        res.redirect('/');
         
     }
 }

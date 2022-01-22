@@ -3,8 +3,8 @@ const mongoose= require("mongoose");
 
 const commentSchema = new mongoose.Schema(
      {
-     name: { type: String, required: true},
-     text: { type: String},
+     name: { type: String, required: true,},
+     text: { type: String, required: true,},
      // * Don't see why this would be necessary 
      // listings: { type:mongoose.Schema.Types.ObjectId, ref:'Listing'}
 },

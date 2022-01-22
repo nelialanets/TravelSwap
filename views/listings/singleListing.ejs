@@ -46,6 +46,7 @@ $(document).ready(function(){
       <textarea name='commentDescription' id='commentArea' name="commentText" cols="30" rows="10" placeholder='Enter your comment here...'></textarea>
       <button type='submit'>Submit</button>
     </form>
+    <h3 class='error'><%= locals.errorMessage %></h3>
     <!-- * Comments * -->
     <div class='commentContainer'>
       <% listing.comment.forEach(aComment => { %>
