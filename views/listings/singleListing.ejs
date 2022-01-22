@@ -30,12 +30,12 @@ $(document).ready(function(){
           </section>
 <div class='single-listing-container'>
     <div class='listing-box'>
-        <h1><%= listing.name %></h1>
+        <h2><%= listing.name %></h2>
         <h3 class='individualLocation'><%= listing.location %></h3>
         <h3 class='individualDate'><%= `Available: ${listing.startDate} - ${listing.endDate}` %></h3>
         <p><%= listing.description %></p>
-        <a class='editButton' href='/listings/<%= listing.id %>/edit'>Edit</a>
-        <form method='POST' action='/listings/<%= listing.id %>?_method=DELETE'>
+        <form  class="single-form-div" method='POST' action='/listings/<%= listing.id %>?_method=DELETE'>
+          <a class='editButton' href='/listings/<%= listing.id %>/edit'>Edit</a>
             <button type='submit' class='deleteButton' href="/listings/<%= listing.id %>">Delete</button>
         </form>
     </div>
@@ -46,6 +46,7 @@ $(document).ready(function(){
       <textarea name='commentDescription' id='commentArea' name="commentText" cols="30" rows="10" placeholder='Enter your comment here...'></textarea>
       <button type='submit'>Submit</button>
     </form>
+    
     <h3 class='error'><%= locals.errorMessage %></h3>
     <!-- * Comments * -->
     <div class='commentContainer'>

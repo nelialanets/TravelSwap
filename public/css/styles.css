@@ -69,18 +69,6 @@ html {
    
  } 
 
-    /* border-style: solid; */
-    /* border-color: black; */
-    /* border-width: 0.1em;
-    border-radius: 15px; */
-    /* background-color: #faf0e6;  */
-
-
-/* .section-search input{
-    padding: 5px !important;
-    font-size: 15px !important;
-    width: 90% !important;
-    border: 1px solid black!important; */
   
 
 #desc {
@@ -122,7 +110,8 @@ border: black 3px !important;
 border-radius: 15%;
 }
 p{
-     color:blue
+     color:blue;
+     margin-bottom: 5%;
 
 }
 
@@ -137,8 +126,7 @@ p{
 } 
 
 .search{
-    margin-top: 5%;
-    margin-bottom: 2%;
+    margin-top: 3%;
     display: flex;
     flex-direction: row; 
     width: 45%;
@@ -149,12 +137,14 @@ p{
 } 
 /* Buttons */
 .search button {
-    position: relative;
+    margin-top: -1%;
+    margin-left: 120%;
+    display: inline-block;
     transition: .2s ease-in; 
     z-index: 1;
-    top: 15px; 
-    height:  40px;
     width: 100px;
+    top: 15px; 
+    height: 40px;
     cursor: pointer;
     border-radius: 5px;
     background: #fe019a !important;
@@ -189,7 +179,10 @@ button::after{ position: absolute;
 }
 
 .deleteButton{
-    position: relative;
+    display: inline-block;
+    align-items: center;
+    margin-bottom: 20%;
+    margin-left: 40%;
     transition: .2s ease-in; 
     z-index: 1;
     top: 15px; 
@@ -206,7 +199,43 @@ button::after{ position: absolute;
     box-shadow: 0 0 5px #ec417a, 0 0 25px #ec417a, 0 0 50px #ec417a, 0 0 200px #ec417a ; 
 }
 
+.commentForm button {
+    position: relative;
+    transition: .2s ease-in; 
+    z-index: 1;
+    top: 15px; 
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #fe019a !important; 
+}
+.commentForm button:hover{
+    border:non;
+    background-color: #f60f5c;
+    box-shadow: 0 0 5px #ec417a, 0 0 25px #ec417a, 0 0 50px #ec417a, 0 0 200px #ec417a ; 
+}
+.editButton {
+    position: relative;
+    margin: 0px 0px 158px 136px;
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px 25px;
+    background-color: #fe019a!important;
+    width: 100px;
+ 
+    text-align: center;
+    border-radius: 0.2rem;
+    font: 16px ;
 
+
+}
+
+.editButton:hover{
+    background-color: #f60f5c;
+    box-shadow: 0 0 5px #ec417a, 0 0 25px #ec417a, 0 0 50px #ec417a, 0 0 200px #ec417a ; 
+}
 /* Listings styling */
 .listingItem {
     display: flex;
@@ -303,11 +332,12 @@ button::after{ position: absolute;
     border-width: 0.2em;
     width: 800px;
     height: 150px;
-    padding: 15px;
+    padding: 5px;
 }
 
 .comments h3 {
     font-size: 1.5rem;
+  
 }
 
 .comments p {
@@ -341,21 +371,12 @@ button::after{ position: absolute;
 #commentArea {
     resize: none;
     grid-column: 1;
-    border-width: 0.2;
+   
     height: 170px;
     padding: 15px;
 }
 
-.commentForm button {
-    height: 25%;
-    width: 10%;
-    background-color: #EC417A !important;
-    border-style: solid;
-    margin: auto;
-    border-color: black;
-    border-radius: 0.8em;
-    cursor: pointer;
-}
+
 
 .listing-box h1 {
     margin-bottom: -10px;
@@ -380,35 +401,7 @@ button::after{ position: absolute;
     color: black;
 }
 
-.editButton {
-    color: black;
-    text-decoration: none;
-    margin: 1% 0;
-    border: 1px solid black;
-    padding: 7px 20px;
-    background-color: #fe019a!important;
-    position: relative;
-    width: 100px;
-    height: 40px;
-    text-align: center;
 
-    /* top: 0px;
-    right: 0px;
-    margin: 10px 10px 0 0;
-    border-style: solid;
-    border-radius: 0.8em;
-    border-width: 0.15em;
-    border-color: black;
-    background: #fe019a !important;
-    cursor: pointer;
-    text-align: center;
-    color: black; */
-}
-
-.editButton:hover{
-    background-color: #f60f5c;
-    box-shadow: 0 0 5px #ec417a, 0 0 25px #ec417a, 0 0 50px #ec417a, 0 0 200px #ec417a ; 
-}
 
 .section-gallery{
     margin-top: 5%;
@@ -436,4 +429,8 @@ h6{
 }
 #galery{
     align-items: center;
+}
+
+.single-form-div{
+    margin-bottom: -15%;
 }
