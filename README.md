@@ -28,4 +28,5 @@ CREATE Page
 
 
 ERD
-<img width="609" alt="Screen Shot 2022-01-21 at 9 36 05 PM" src="https://user-images.githubusercontent.com/78198715/150628660-8cabf299-cdb8-4485-9d0d-4222edbe9a6a.png">
+<img width="1121" alt="Screen Shot 2022-01-22 at 10 31 18 AM" src="https://user-images.githubusercontent.com/78198715/150651114-69c8b79c-c203-4017-b069-c61700e363e3.png">
+
