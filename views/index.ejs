@@ -116,7 +116,7 @@ $(document).ready(function(){
        <li>
          <img src="/images/img3.jpg"> <!-- random image -->
          <div class="caption right-align">
-           <h3>Make your Travel Posible</h3>
+           <h3>Make your Travel Possible</h3>
            <h5 class="light grey-text text-lighten-3"></h5>
          </div>
        </li>
@@ -133,9 +133,9 @@ $(document).ready(function(){
      <div class="container">
        <div class='row'>
          <div class="col s12">
-           <div class="input-search-form">
-             <input type="text" id="autocomplete-input" class=" white black-text autocomplete" placeholder="Search">
-           </div>
+           <form action='/listings' method='GET' class="input-search-form">
+             <input type="text" name='location' id="autocomplete-input" class=" white black-text autocomplete" placeholder="Search">
+           </form>
          </div>
        </div>
      </div>
