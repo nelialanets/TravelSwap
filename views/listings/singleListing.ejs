@@ -39,6 +39,13 @@ $(document).ready(function(){
             <button type='submit' class='deleteButton' href="/listings/<%= listing.id %>">Delete</button>
         </form>
     </div>
+    <p class='commentHeader'>Comments</p>
+    <!-- Comment Submitter -->
+    <form class='commentForm' action="">
+      <input type="text" placeholder='Enter your name here...'>
+      <textarea id='commentArea' name="commentText" cols="30" rows="10" placeholder='Enter your comment here...'></textarea>
+      <button type='submit'>Submit</button>
+    </form>
     <!-- * Comments * -->
     <div class='commentContainer'>
       <% listing.comment.forEach(aComment => { %>
