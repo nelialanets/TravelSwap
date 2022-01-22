@@ -1,5 +1,8 @@
 # TravelSwap
 Collaborative project for GA- Project 2
+Concept:
+
+The TravelSwap website is designed for users who would like to swap their home/places from like minded people around the globe and avoid paying for housing while traveling. Users can search available listings through the search bar or by navigating to a nav bar and clicking on "view listings" tab. Once on the listing page, the user will be able to view the list of available listings and click on it to get more details on the list. Further users will be able to add new nistin, update old one, delete them, as well as post a comment to a listing they are interested in.
 
 https://travelswap.herokuapp.com/listings/61ebd30972d1313201ba1dd9
 
