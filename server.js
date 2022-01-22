@@ -12,7 +12,7 @@ const db = require('./config/database')
 
 const indexRouter = require('./routes/index');
 const listingRouter = require ('./routes/listings');
-const reviewRouter = require('./routes/reviews');
+const commentRouter = require('./routes/comments');
 
 /* ==== Instanced Modules  ==== */
 const app = express();
@@ -44,7 +44,7 @@ app.get("/",(req,res)=>{
 });
 app.use('/', indexRouter);
 app.use('/listings', listingRouter);
-app.use('/', reviewRouter);
+app.use('/', commentRouter);
 
 
 app.listen(PORT, () => {

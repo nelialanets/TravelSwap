@@ -9,7 +9,6 @@ router.post('/', listilngsCTRL.postListing);
 router.get('/:id', listilngsCTRL.show);
 router.get('/:id/edit', listilngsCTRL.edit);
 router.put('/:id', listilngsCTRL.updateListing);
-router.put('/:id/comment', listilngsCTRL.addComment);
 router.delete('/:id',listilngsCTRL.remove);
 
 module.exports = router;
