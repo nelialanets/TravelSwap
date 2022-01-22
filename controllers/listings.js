@@ -1,5 +1,5 @@
 const Listing = require('../models/Listing');
-const Review = require('../models/Review')
+const Comment = require('../models/Comment')
 
 
 const create = (req, res)=> {
@@ -32,6 +32,7 @@ const postListing = async (req, res) => {
         endDate: req.body.endDate,
         img: '',
     })
+    
 
     try {
         const newListing = await listing.save()
@@ -116,6 +117,40 @@ const updateListing = async (req, res) => {
         
     }
 }
+// * Add Comment
+const addComment = async (req, res) => {
+
+    let listing;
+
+    try {
+
+        listing = await Listing.findById(req.params.id)
+
+        if (req.body.commentName === '' || req.body.commentDescription === '') {
+            res.render('listings/singleListing', {
+                listing: listing,
+                errorMessage: 'You must fill in all fields.',
+            })
+
+            return;
+        }
+
+        const newComment = new Comment({
+            name: req.body.commentName,
+            text: req.body.commentDescription,
+        })
+
+        listing.comment.push(newComment);
+
+        await listing.save()
+        res.redirect(`/listings/${listing.id}`)
+
+    } catch {
+        res.redirect('/');
+        
+    }
+}
+
 
 // * Delete 
 const remove = async (req, res)=>{
@@ -137,7 +172,6 @@ const remove = async (req, res)=>{
         
     }
 }
-
  
 module.exports={
      index,
@@ -148,4 +182,5 @@ module.exports={
      remove,
      postListing,
      updateListing,
+     addComment,
 }

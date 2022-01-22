@@ -277,12 +277,85 @@ button::after{ position: absolute;
     display: flex;
     flex-direction: column;
     min-width: 800px;
-    min-height: 450px;
+    min-height: 350px;
     position: relative;
     border-radius: 25px;
     padding: 0 0 0 10px;
     margin-bottom: 10vh;
     border-style: none;
+}
+
+.commentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    width: inherit;
+    gap: 0.5em;
+    margin-bottom: 15px;
+}
+
+.comments {
+    text-align: left;
+    border-style: solid;
+    border-color: black;
+    border-radius: 0.8em;
+    border-width: 0.2em;
+    width: 800px;
+    height: 150px;
+    padding: 15px;
+}
+
+.comments h3 {
+    font-size: 1.5rem;
+}
+
+.comments p {
+    color: black;
+}
+
+.commentForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    /* grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 500px 300px; */
+    width: 800px;
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 0.8em;
+}
+
+.commentHeader {
+    color: black;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.commentForm input {
+    margin-bottom: 99px;
+}
+
+#commentArea {
+    resize: none;
+    grid-column: 1;
+    border-width: 0.2;
+    height: 170px;
+    padding: 15px;
+}
+
+.commentForm button {
+    height: 25%;
+    width: 10%;
+    background-color: #EC417A !important;
+    border-style: solid;
+    margin: auto;
+    border-color: black;
+    border-radius: 0.8em;
+    cursor: pointer;
 }
 
 .listing-box h1 {
