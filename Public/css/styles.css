@@ -303,6 +303,7 @@ button::after{ position: absolute;
     border-radius: 0.8em;
     border-width: 0.2em;
     width: 800px;
+    height: 150px;
     padding: 15px;
 }
 
@@ -349,7 +350,7 @@ button::after{ position: absolute;
 .commentForm button {
     height: 25%;
     width: 10%;
-    background-color: #EC417A;
+    background-color: #EC417A !important;
     border-style: solid;
     margin: auto;
     border-color: black;

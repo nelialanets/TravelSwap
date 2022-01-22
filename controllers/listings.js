@@ -130,8 +130,30 @@ const updateListing = async (req, res) => {
     }
 }
 // * Add Comment
-const addComment = (req, res) => {
+const addComment = async (req, res) => {
 
+    let listing;
+
+    try {
+
+        listing = await Listing.findById(req.params.id)
+
+        const newComment = new Comment({
+            name: req.params.commentName,
+            text: req.params.commentDescription,
+        })
+
+        console.log(newComment);
+
+        listing.comment.push(newComment);
+
+        await listing.save()
+        res.redirect(`/listings/${listing.id}`)
+
+    } catch {
+        res.redirect('/listings');
+        
+    }
 }
 
 
