@@ -191,7 +191,6 @@ button::after{ position: absolute;
     cursor: pointer;
     border-radius: 5px;
     background: #fe019a !important;
-
 }
 .deleteButton:hover{
     border:non;
@@ -220,16 +219,14 @@ button::after{ position: absolute;
     margin: 0px 0px 158px 136px;
     color: black;
     text-decoration: none;
-    border: 1px solid black;
+    border: 2px solid black;
     padding: 10px 25px;
     background-color: #fe019a!important;
+    height: 40px;
     width: 100px;
- 
     text-align: center;
     border-radius: 0.2rem;
     font: 16px ;
-
-
 }
 
 .editButton:hover{
