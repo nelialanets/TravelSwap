@@ -133,9 +133,19 @@ const addComment = async (req, res) => {
         let listing = await Listing.findById(req.params.id)
 
         if (req.body.commentName === '' || req.body.commentDescription === '') {
+
+            const comments = [];
+
+            for (let comm of listing.comment) {
+                let comment = await Comment.findById(comm);
+                comments.push(comment);
+            }
+
+
             res.render('listings/singleListing', {
                 listing: listing,
                 errorMessage: 'You must fill in all fields.',
+                comments: comments,
             })
 
             return;
