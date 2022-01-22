@@ -14,11 +14,15 @@ USER FLOW
 
 
 
-Wireframe
+Wireframes
+HOME PAGE
 
 <img width="865" alt="Screen Shot 2022-01-21 at 11 00 01 PM" src="https://user-images.githubusercontent.com/78198715/150628641-d9b5d3d1-d4c7-4a37-a316-0a8384354ef5.png">
 
+Listing Page
 <img width="1236" alt="Screen Shot 2022-01-21 at 11 01 44 PM" src="https://user-images.githubusercontent.com/78198715/150628647-c77ed432-5fc7-40e4-b2dd-01b977357648.png">
+
+CREATE Page
 <img width="1259" alt="Screen Shot 2022-01-21 at 11 02 37 PM" src="https://user-images.githubusercontent.com/78198715/150628652-acf8a863-0631-41c3-9c8b-49c27f043439.png">
 
 
