@@ -23,17 +23,6 @@ const postListing = async (req, res) => {
     let year = date.getFullYear();
     let fullDate = `${month}/${day}/${year}`;
 
-
-    const comment = new Comment({
-        name: 'Sandra',
-        text: 'I would like to swap with you!'
-    })
-
-    const comment2 = new Comment({
-        name: 'Bob',
-        text: 'This was a great visit!',
-    })
-
     const listing = new Listing({
         name: req.body.name,
         location: req.body.location,
@@ -42,7 +31,6 @@ const postListing = async (req, res) => {
         startDate: req.body.startDate,
         endDate: req.body.endDate,
         img: '',
-        comment: [comment, comment2],
     })
     
 
@@ -139,11 +127,9 @@ const addComment = async (req, res) => {
         listing = await Listing.findById(req.params.id)
 
         const newComment = new Comment({
-            name: req.params.commentName,
-            text: req.params.commentDescription,
+            name: req.body.commentName,
+            text: req.body.commentDescription,
         })
-
-        console.log(newComment);
 
         listing.comment.push(newComment);
 
@@ -151,7 +137,11 @@ const addComment = async (req, res) => {
         res.redirect(`/listings/${listing.id}`)
 
     } catch {
-        res.redirect('/listings');
+        if (listing == null) {
+            res.redirect('/')
+        } else {
+            res.redirect(`/listings/${listing.id}`)
+        }
         
     }
 }
