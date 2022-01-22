@@ -107,6 +107,49 @@
   </div>
 </section>
  </div>
+ <script>
+
+  //SideNav
+  $(document).ready(function(){
+       $('.sidenav').sidenav();
+  });
+  
+  $(document).ready(function(){
+          $('.slider').slider({ 
+            indicator:false,
+            height:600,
+            transition:500,
+            interval:6000,
+             fullWidth: true
+          });
+        });
+           
+        $(document).ready(function(){
+          $('.sidenav').sidenav();
+        });
+  
+        $(document).ready(function(){
+             $('input.autocomplete').autocomplete
+             ({
+                  data:{
+                       'Aruba': null,
+                       'Bali': null,
+                       'Florida': null,
+                       'Hawaii': nul,
+                       'Brazil': null,
+                      },
+              });
+         });
+        
+    $(document).ready(function(){
+      $('.materialboxed').materialbox();
+    });
+       
+    $(document).ready(function(){
+      $('select').formSelect();
+    });
+             
+  </script>
 </body>
 <%- include('../partials/footer') %>
 </html>
