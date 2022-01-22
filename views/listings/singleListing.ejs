@@ -49,7 +49,7 @@ $(document).ready(function(){
     <h3 class='error'><%= locals.errorMessage %></h3>
     <!-- * Comments * -->
     <div class='commentContainer'>
-      <% listing.comment.forEach(aComment => { %>
+      <% comments.forEach(aComment => { %>
         <div class='comments'>
           <h3><%= aComment.name %></h3>
           <p><%= aComment.text %></p>

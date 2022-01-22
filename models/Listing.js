@@ -30,7 +30,7 @@ const listingSchema = new mongoose.Schema({
           type: String,
        },
        comment: {
-            type: [],
+            type: [{type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}],
        }
 },
       {

@@ -70,8 +70,16 @@ const index = async (req, res)=> {
 // * Show one listing
 const show = async (req, res)=>{
     try {
-        const listing = await Listing.findById(req.params.id)
-        res.render('listings/singleListing', {listing: listing})
+        const listing = await Listing.findById(req.params.id);
+
+        const comments = [];
+
+        for (let comm of listing.comment) {
+            let comment = await Comment.findById(comm);
+            comments.push(comment);
+        }
+
+        res.render('listings/singleListing', {listing: listing, comments: comments})
     } catch {
         res.redirect('/listings')
     }
@@ -120,11 +128,9 @@ const updateListing = async (req, res) => {
 // * Add Comment
 const addComment = async (req, res) => {
 
-    let listing;
-
     try {
 
-        listing = await Listing.findById(req.params.id)
+        let listing = await Listing.findById(req.params.id)
 
         if (req.body.commentName === '' || req.body.commentDescription === '') {
             res.render('listings/singleListing', {
@@ -143,6 +149,7 @@ const addComment = async (req, res) => {
         listing.comment.push(newComment);
 
         await listing.save()
+        await newComment.save()
         res.redirect(`/listings/${listing.id}`)
 
     } catch {
